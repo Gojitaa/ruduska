@@ -1,4 +1,4 @@
-name: CODE_QUALITY
+name: Code Quality
 
 on:
   pull_request:
@@ -37,8 +37,3 @@ jobs:
       - name: Run Build
         run: npm run build
       
-      - name: Create Coverage Badge
-        uses: jpb06/jest-badges-action@latest
-        with:
-          branches: main,development
-
