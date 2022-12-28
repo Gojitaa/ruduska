@@ -1,9 +1,6 @@
 name: Update Coverage
 on:
-  pull_request:
-    branches: [main, development]
-    types:
-      - closed
+  push
 
 env:
   NODE_VERSION: 16
