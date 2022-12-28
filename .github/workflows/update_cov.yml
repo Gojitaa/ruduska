@@ -20,6 +20,8 @@ jobs:
 
       - name: Checkout Repo
         uses: actions/checkout@v3
+        with:
+          ref: main
 
       - name: Install Dependencies
         run: npm ci
