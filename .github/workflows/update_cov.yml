@@ -1,6 +1,7 @@
 name: Update Coverage
 on:
-  push
+  push:
+    branches: [development]
 
 env:
   NODE_VERSION: 16
@@ -26,6 +27,4 @@ jobs:
         run: npm test
 
       - name: Create Coverage Badge
-        uses: jpb06/jest-badges-action@latest
-        with:
-          branches: main,development
+        run: npm run create-badge
