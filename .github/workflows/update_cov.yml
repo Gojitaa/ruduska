@@ -29,3 +29,5 @@ jobs:
 
       - name: Create Coverage Badge
         uses: jpb06/jest-badges-action@latest
+        with:
+          branches: main,development
