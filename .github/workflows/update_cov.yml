@@ -1,17 +1,11 @@
-name: Code Quality
-
-on:
-  pull_request:
-    branches:
-      - development
-      - main
+name: Update Coverage
+on: [push]
 
 env:
   NODE_VERSION: 16
 
 jobs:
-  code_quality:
-    name: Code Quality
+  bump:
     runs-on: ubuntu-latest
     steps:
       - name: Install Node
@@ -25,15 +19,10 @@ jobs:
       - name: Install Dependencies
         run: npm ci
 
-      - name: Run Prettier
-        run: npm run format
-
-      - name: Run Linting
-        run: npm run lint
-      
       - name: Run Unit Tests
         run: npm test
 
-      - name: Run Build
-        run: npm run build
-      
+      - name: Create Coverage Badge
+        uses: jpb06/jest-badges-action@latest
+        with:
+          branches: development,main
