@@ -1,2 +1,3 @@
-import { d } from "./Trie/index"
-d()
+import Trie from "./Trie/index"
+
+export { Trie }

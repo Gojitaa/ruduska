@@ -9,7 +9,7 @@
   "scripts": {
     "lint": "eslint --ignore-path .eslintignore . --ext .js,.ts --fix",
     "format": "prettier --ignore-path .eslintignore --write \"**/*.+(js|ts)\"",
-    "test": "jest",
+    "test": "jest --coverage",
     "build": "rollup -c"
   },
   "keywords": [],
