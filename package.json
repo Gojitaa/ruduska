@@ -5,6 +5,7 @@
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "typings": "dist/index.d.ts",
+  "type": "module",
   "scripts": {
     "lint": "eslint --ignore-path .eslintignore . --ext .js,.ts --fix",
     "format": "prettier --ignore-path .eslintignore --write \"**/*.+(js|ts)\"",
