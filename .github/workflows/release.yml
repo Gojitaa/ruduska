@@ -10,16 +10,16 @@ jobs:
     if: github.event.pull_request.merged
     runs-on: ubuntu-latest
     steps:
+    - name: Install Node
+      uses: actions/setup-node@v3
+      with:
+        registry-url: https://registry.npmjs.org/
+        node-version: ${{env.NODE_VERSION}}
 
     - name: setup git config
       run: |
         git config user.name "GitHub Actions Bot"
         git config user.email "<>"
-
-    - name: Install Node
-      uses: actions/setup-node@v3
-      with:
-          node-version: ${{env.NODE_VERSION}}
 
     - name: Checkout Repo and Default Branch
       uses: actions/checkout@v3
@@ -47,6 +47,8 @@ jobs:
 
     - name: Publish
       run: npm publish
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
     
     - name: Push branch
       run: git push
