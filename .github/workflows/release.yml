@@ -16,13 +16,13 @@ jobs:
         registry-url: https://registry.npmjs.org/
         node-version: ${{env.NODE_VERSION}}
 
+    - name: Checkout Repo and Default Branch
+      uses: actions/checkout@v3
+
     - name: setup git config
       run: |
         git config user.name "GitHub Actions Bot"
         git config user.email "<>"
-
-    - name: Checkout Repo and Default Branch
-      uses: actions/checkout@v3
 
     - name: Pull Changes
       run: git pull
