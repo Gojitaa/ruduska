@@ -6,8 +6,8 @@
   "module": "dist/index.esm.js",
   "typings": "dist/index.d.ts",
   "exports": {
-    "require": "./lib/cjs/index.js",
-    "import": "./lib/esm/index.js"
+    "require": "./dist/index.js",
+    "import": "./dist/index.esm.js"
   },
   "scripts": {
     "lint": "eslint --ignore-path .eslintignore . --ext .js,.ts --fix",
@@ -17,7 +17,7 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@rollup/plugin-terser": "^0.2.1",
     "@rollup/plugin-typescript": "^10.0.1",
