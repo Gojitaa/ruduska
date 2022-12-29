@@ -12,7 +12,7 @@ describe("Trie", () => {
         })
     })
 
-    it("should contain the string 'js'", () => {
+    /*it("should contain the string 'js'", () => {
         const trie = new Trie()
 
         trie.insert("js")
@@ -37,7 +37,7 @@ describe("Trie", () => {
         trie.insert("JS")
 
         expect(trie.search("js")).toBeTruthy()
-    })
+    })*/
 
     it("should return an array containing all the strings that start with 'new'", () => {
         const trie = new Trie()

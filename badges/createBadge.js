@@ -19,7 +19,7 @@ const badge = `
 	<svg xmlns="http://www.w3.org/2000/svg" 
 		xmlns:xlink="http://www.w3.org/1999/xlink" 
 		width="121.25" height="28" role="img" aria-label="COVERAGE">
-		<title>COVERAGE: 0</title>
+		<title>COVERAGE</title>
 		<g shape-rendering="crispEdges">
 			<rect width="89" height="28" fill="#555"/>
 			<rect x="89" width="32.25" height="28" fill="#4c1"/>

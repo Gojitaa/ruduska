@@ -28,3 +28,7 @@ jobs:
 
       - name: Create Coverage Badge
         run: npm run create-badge
+      
+      - uses: mikeal/publish-to-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
