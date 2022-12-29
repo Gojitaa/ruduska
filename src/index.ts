@@ -1,3 +1,3 @@
 import Trie from "./Trie/index"
 
-export { Trie }
+export default { Trie }

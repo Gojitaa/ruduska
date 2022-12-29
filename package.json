@@ -5,7 +5,10 @@
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "typings": "dist/index.d.ts",
-  "type": "module",
+  "exports": {
+    "require": "./lib/cjs/index.js",
+    "import": "./lib/esm/index.js"
+  },
   "scripts": {
     "lint": "eslint --ignore-path .eslintignore . --ext .js,.ts --fix",
     "format": "prettier --ignore-path .eslintignore --write \"**/*.+(js|ts)\"",
