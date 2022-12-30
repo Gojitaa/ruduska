@@ -1,17 +1,15 @@
 on:
   pull_request:
     branches:
-      - main
-    types:
-      - closed
+      - 'main'
 
 env:
   NODE_VERSION: 16
 
 jobs:
-  release:
-    if: github.event.pull_request.merged
+  bump:
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/release/**'
     steps:
     - name: Install Node
       uses: actions/setup-node@v3
@@ -45,12 +43,8 @@ jobs:
     - name: Run Build
       run: npm run build
 
-    - name: Publish
-      run: npm publish
-      env:
-        NODE_AUTH_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
-    
-    - name: Push Tag
-      run: git push --tags
-      
-    
+    - name: Bump Lib Version
+      run: npm version patch
+
+    - name: Push branch
+      run: git push
