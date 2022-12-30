@@ -24,8 +24,8 @@ jobs:
 
     - name: setup git config
       run: |
-        git config user.name "GitHub Actions Bot"
-        git config user.email "<>"
+        git config user.name "${{secrets.F_PUSH_NAME}}"
+        git config user.email "${{secrets.F_PUSH_EMAIL}}"
 
     - name: Pull Changes
       run: git pull
@@ -33,24 +33,23 @@ jobs:
     - name: Install Dependencies
       run: npm ci
 
-    - name: Run Prettier
-      run: npm run format
+    - name: Check
+      run: |
+        npm run format
+        npm run lint
+        npm test
+        npm run build
 
-    - name: Run Linting
-      run: npm run lint
-    
-    - name: Run Unit Tests
-      run: npm test
-
-    - name: Run Build
-      run: npm run build
+    - name: Bump Lib Version
+      run: npm version patch
 
     - name: Publish
       run: npm publish
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
-    
-    - name: Push Tag
-      run: git push --tags
-      
+
+    - name: Push branch & tag
+      run: | 
+        git push --force
+        git push --tags
     
