@@ -8,7 +8,7 @@ export default [
     {
         input,
         output: {
-            file: "dist/index.esm.js",
+            file: "dist/index.mjs",
             format: "esm"
         },
         plugins: [typescript()]
