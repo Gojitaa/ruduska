@@ -52,6 +52,6 @@ jobs:
 
     - name: Push branch & tag
       run: | 
-        git push --force
+        git push
         git push --tags
     
