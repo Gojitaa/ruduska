@@ -1,10 +1,6 @@
 # Ruduska :cat2:
 
-<!-- Add buttons here -->
-
-![GitHub version](https://img.shields.io/npm/v/ruduska?style=for-the-badge) ![GitHub build](https://img.shields.io/github/actions/workflow/status/Gojitaa/ruduska/pr_to_dev.yml?style=for-the-badge) 
-
-<!-- Describe your project in brief -->
+![NPM version](https://img.shields.io/npm/v/ruduska?style=for-the-badge) ![GitHub build](https://img.shields.io/github/actions/workflow/status/Gojitaa/ruduska/pr_to_dev.yml?style=for-the-badge) 
 
 Collection of useful abstractions for javascript and typescript projects.
 
