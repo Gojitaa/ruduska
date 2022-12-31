@@ -21,11 +21,13 @@ jobs:
 
     - name: Checkout Repo and Default Branch
       uses: actions/checkout@v3
+      with:
+        token: ${{secrets.CI_TOKEN}}
 
     - name: setup git config
       run: |
-        git config user.name "${{secrets.F_PUSH_NAME}}"
-        git config user.email "${{secrets.F_PUSH_EMAIL}}"
+        git config user.name "Github Action bot"
+        git config user.email "<>"
 
     - name: Pull Changes
       run: git pull
