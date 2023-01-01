@@ -24,15 +24,11 @@ jobs:
       - name: Install Dependencies
         run: npm ci
 
-      - name: Run Prettier
-        run: npm run format
-
-      - name: Run Linting
-        run: npm run lint
-      
-      - name: Run Unit Tests
-        run: npm test
-
-      - name: Run Build
-        run: npm run build
+      - name: Check
+        run: |
+          npm run format
+          npm run lint
+          npm run lint:types
+          npm run test
+          npm run build
       
