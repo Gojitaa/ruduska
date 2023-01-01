@@ -14,7 +14,14 @@ Collection of useful abstractions for javascript and typescript projects.
 # Installation
 [(Back to top)](#table-of-contents)
 
-TBD
+NPM:
+```
+npm i ruduska
+```
+Yarn:
+```
+yarn add ruduska
+```
 
 # Usage
 [(Back to top)](#table-of-contents)
