@@ -10,7 +10,7 @@ env:
 
 jobs:
   release:
-    if: github.event.pull_request.merged
+    if: github.event.pull_request.merged && contains(github.head_ref, 'release/')
     runs-on: ubuntu-latest
     steps:
     - name: Install Node
@@ -42,10 +42,16 @@ jobs:
         npm run lint:types
         npm test
         npm run build
-        echo '${{ toJSON(github) }}'
 
-    - name: Bump Lib Version
+    - name: Bump Lib Version (patch)
+      if: github.head_ref == 'release/patch'
       run: npm version patch
+    - name: Bump Lib Version (minor)
+      if: github.head_ref == 'release/minor'
+      run: npm version minor
+    - name: Bump Lib Version (major)
+      if: github.head_ref == 'release/major'
+      run: npm version major
 
     - name: Publish
       run: npm publish
