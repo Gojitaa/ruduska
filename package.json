@@ -10,6 +10,7 @@
     "import": "./dist/index.esm.js"
   },
   "scripts": {
+    "lint:types": "tsc --project ./tsconfig.json --skipLibCheck --noEmit",
     "lint": "eslint --ignore-path .eslintignore . --ext .js,.ts --fix",
     "format": "prettier --ignore-path .eslintignore --write \"**/*.+(js|ts)\"",
     "test": "jest --coverage",
