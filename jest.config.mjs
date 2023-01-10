@@ -2,7 +2,6 @@
 
 export default {
     preset: "ts-jest",
-    coverageReporters: ["json-summary", "text"],
     testEnvironment: "node",
     coverageThreshold: {
         global: {
