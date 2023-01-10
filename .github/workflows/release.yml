@@ -46,7 +46,7 @@ jobs:
     - name: Coveralls
       uses: coverallsapp/github-action@master
       with:
-        github-token: ${{ secrets.CI_TOKEN }}
+        github-token: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Bump Lib Version (patch)
       if: github.head_ref == 'release/patch'
