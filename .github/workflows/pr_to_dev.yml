@@ -29,6 +29,11 @@ jobs:
           npm run format
           npm run lint
           npm run lint:types
-          npm run test
+          npm run test:ci
           npm run build
+
+      - name: Coveralls
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
       
