@@ -14,7 +14,6 @@
     "lint": "eslint --ignore-path .eslintignore . --ext .js,.ts --fix",
     "format": "prettier --ignore-path .eslintignore --write \"**/*.+(js|ts)\"",
     "test": "jest --coverage",
-    "test:ci": "jest --coverage && cat ./coverage/lcov.info | coveralls",
     "build": "rollup -c"
   },
   "keywords": [],
