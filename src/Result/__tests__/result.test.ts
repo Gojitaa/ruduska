@@ -85,11 +85,6 @@ describe("Result", () => {
         })
     })
 
-    /*xdescribe("mapErr", () => {
-        xit("should map Err variant properly", () => {})
-        xit("should leave Ok variant untouched", () => {})
-    })*/
-
     describe("tryCatch", () => {
         it("should return Ok is parsing succeeded", () => {
             const res = tryCatch(() => JSON.parse("{}"))
