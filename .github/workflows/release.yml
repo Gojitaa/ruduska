@@ -43,6 +43,11 @@ jobs:
         npm test
         npm run build
 
+    - name: Coveralls
+      uses: coverallsapp/github-action@master
+      with:
+        github-token: ${{ secrets.CI_TOKEN }}
+
     - name: Bump Lib Version (patch)
       if: github.head_ref == 'release/patch'
       run: npm version patch
