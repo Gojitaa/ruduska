@@ -85,6 +85,8 @@ describe("Result", () => {
         })
     })
 
+    // TODO: mapErr
+
     describe("tryCatch", () => {
         it("should return Ok is parsing succeeded", () => {
             const res = tryCatch(() => JSON.parse("{}"))
