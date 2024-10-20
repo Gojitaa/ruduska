@@ -1,41 +1,41 @@
-import typescript from "@rollup/plugin-typescript"
-import dts from "rollup-plugin-dts"
-import terser from "@rollup/plugin-terser"
+import typescript from '@rollup/plugin-typescript';
+import dts from 'rollup-plugin-dts';
+import terser from '@rollup/plugin-terser';
 
-const input = "src/index.ts"
+const input = 'src/index.ts';
 
 export default [
-    {
-        input,
-        output: {
-            file: "dist/index.mjs",
-            format: "esm"
-        },
-        plugins: [typescript()]
+  {
+    input,
+    output: {
+      file: 'dist/index.mjs',
+      format: 'esm',
     },
-    {
-        input,
-        output: {
-            file: "dist/index.js",
-            format: "cjs"
-        },
-        plugins: [typescript()]
+    plugins: [typescript()],
+  },
+  {
+    input,
+    output: {
+      file: 'dist/index.js',
+      format: 'cjs',
     },
-    {
-        input,
-        output: {
-            file: "dist/index.min.js",
-            name: "index.js",
-            format: "iife"
-        },
-        plugins: [typescript(), terser()]
+    plugins: [typescript()],
+  },
+  {
+    input,
+    output: {
+      file: 'dist/index.min.js',
+      name: 'index.js',
+      format: 'iife',
     },
-    {
-        input,
-        output: {
-            file: "dist/index.d.ts",
-            format: "es"
-        },
-        plugins: [dts()]
-    }
-]
+    plugins: [typescript(), terser()],
+  },
+  {
+    input,
+    output: {
+      file: 'dist/index.d.ts',
+      format: 'es',
+    },
+    plugins: [dts()],
+  },
+];
